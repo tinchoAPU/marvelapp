@@ -1,34 +1,43 @@
 <p>character-list works!</p>
 
-<!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="characters" class="mat-elevation-z8">
 
-  &lt;!&ndash;- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" &ndash;&gt;
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
 
-  &lt;!&ndash; Position Column &ndash;&gt;
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>Id</th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
 
-  &lt;!&ndash; Name Column &ndash;&gt;
+  <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
 
-  &lt;!&ndash; Weight Column &ndash;&gt;
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef> Weight </th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  <!-- Weight Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
   </ng-container>
 
-  &lt;!&ndash; Symbol Column &ndash;&gt;
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="modified">
+    <th mat-header-cell *matHeaderCellDef> Modified </th>
+    <td mat-cell *matCellDef="let element"> {{element.modified}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="resourceURI">
+    <th mat-header-cell *matHeaderCellDef> Resource URI </th>
+    <td mat-cell *matCellDef="let element"> {{element.resourceURI}} </td>
+  </ng-container>
+  <ng-container matColumnDef="detail">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let element"><button mat-button color="primary" (click)="navigateDetail(element.id)">View Detail</button>  </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>-->
+</table>
