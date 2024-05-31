@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MarvelService } from 'src/app/service/marvel.service';
+import { Character } from 'src/app/dto/character';
 
 export interface PeriodicElement {
   name: string;
@@ -30,11 +32,21 @@ export class CharacterListComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
   data: any;
+  characters: Character[] = [];
   constructor(private marvelService: MarvelService) { }
 
   ngOnInit(): void {
-
-
+        debugger;
+    this.marvelService.getAllCharacters().subscribe({
+      next: (characters) => {
+        debugger;
+        this.characters = characters;
+        console.log(characters);
+      },
+      error: (error) => {
+        console.error('Error fetching characters', error);
+      }
+    });
   }
 
 }
