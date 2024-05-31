@@ -4,12 +4,6 @@ import { Character } from 'src/app/dto/character';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
 @Component({
   selector: 'app-character-list',

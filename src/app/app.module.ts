@@ -11,12 +11,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { LogsComponent } from './logs/logs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterListComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    LogsComponent
   ],
   imports: [
     BrowserModule,
